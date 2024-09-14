@@ -9,7 +9,8 @@ def isDecimal(num) :
     if (num == 1) : # 예외 : 1은 소수가 아님
         return 1
     
-    if (math.ceil(math.sqrt(num)) == math.sqrt(num)) : # 제곱근이 정수이면 소수가 아님
+    temp = math.sqrt(num)
+    if (math.ceil(temp) == temp) : # 제곱근이 정수이면 소수가 아님
         return 1
     
     if (num%2 == 0 and num != 2) : # 2가 아닌 짝수는 소수가 아님
@@ -33,7 +34,6 @@ def isDecimal(num) :
         num_list = [num_list[y] for y in range(0, len(num_list), 1) if (num_list[y] not in use_list)]
         
     return check_num
-
 
 # 입력받기
 m = int(input())
@@ -62,5 +62,3 @@ if (min == n and max == m) : # 소수가 없을 경우
 else :
     print(all)
     print(min)
-            
-            
